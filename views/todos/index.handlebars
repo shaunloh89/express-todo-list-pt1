@@ -1,0 +1,23 @@
+<h1>List of Todos</h1>
+
+<h1>Form to Create New Todos</h1>
+<form action="/todos" method="post">
+  <label for="name">Name</label>
+  <input id="name" type="text" name="Name" value="">
+
+  <label for="desc">Description</label>
+  <input id="desc" type="text" name="Description" value="">
+
+  <label for="completed">Completed</label>
+  <input id="completed" type="text" name="Completed" value="">
+  <button type="submit" name="button">Create</button>
+</form>
+
+{{!-- Render all Todos --}}
+<ul>
+  {{#each todos as |todo|}}
+    <li>
+      Name: {{ todo.name }} || Description: {{ todo.desc }} || Completed: {{todo.completed}}
+    </li>
+  {{/each}}
+</ul>
